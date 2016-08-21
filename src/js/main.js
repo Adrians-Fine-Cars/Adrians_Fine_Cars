@@ -15,7 +15,6 @@ ReactDOM.render ((
 	<Router history={hashHistory}>
 		<Route path="/" component={Heading}>
 			<IndexRoute component={Home} />
-			<Route path="/home" component={Home} />
 			<Route path="/inventory" component={Inventory} />
 			<Route path="/about" component={About} />
 			<Route path="/contact" component={Contact} />
