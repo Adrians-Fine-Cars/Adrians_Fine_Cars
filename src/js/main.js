@@ -14,7 +14,7 @@ import CreateNewListing from './createNewListing';
 ReactDOM.render ((
 	<Router history={hashHistory}>
 		<Route path="/" component={Heading}>
-			<IndexRoute component={Main} />
+			<IndexRoute component={Home} />
 			<Route path="/home" component={Home} />
 			<Route path="/inventory" component={Inventory} />
 			<Route path="/about" component={About} />
