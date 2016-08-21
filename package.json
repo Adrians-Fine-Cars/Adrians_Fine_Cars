@@ -35,6 +35,9 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watch": "^4.3.5",
     "node-sass": "3.4.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-router": "^2.7.0",
     "sass-module-importer": "1.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
