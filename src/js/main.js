@@ -19,5 +19,8 @@ ReactDOM.render ((
 			<Route path="/about" component={About} />
 			<Route path="/contact" component={Contact} />
 		</Route>
+		<Route path="/login" component={Login} />
+		<Route path="/dashboard" component={Dashboard} />
+		<Route path="/createNewListing" component={CreateNewListing} />
 	</Router>
 	), document.querySelector('.container'));

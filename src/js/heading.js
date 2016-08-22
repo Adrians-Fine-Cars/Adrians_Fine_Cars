@@ -17,7 +17,7 @@ export default class Heading extends Component {
 				{this.props.children}
 				<footer className="footer">
 					<div>Adrians Fine Cars 2016</div>
-
+					<Link to="/login"><button>AG</button></Link>
 				</footer>
 			</div>
 		)
