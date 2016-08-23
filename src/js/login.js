@@ -11,6 +11,7 @@ export default class Login extends Component {
 						<h1>Adrian's Garage</h1>
 						<img className="login_img" />
 					</div>
+					
 					<div className="login_container">
 						<label>Username</label>
 						<input type="text" placeholder="Enter Username" name="username" required></input>

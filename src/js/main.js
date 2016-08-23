@@ -10,6 +10,7 @@ import Contact from './contact';
 import Login from './login';
 import Dashboard from './dashboard';
 import CreateNewListing from './createNewListing';
+import CreateFeaturedVehicle from './createFeaturedVehicle';
 
 ReactDOM.render ((
 	<Router history={hashHistory}>
@@ -22,5 +23,6 @@ ReactDOM.render ((
 		<Route path="/login" component={Login} />
 		<Route path="/dashboard" component={Dashboard} />
 		<Route path="/createNewListing" component={CreateNewListing} />
+		<Route path="/createFeaturedVehicle" component={CreateFeaturedVehicle} />
 	</Router>
 	), document.querySelector('.container'));
