@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHitory, IndexRoute, Link } from 'react-router';
+import SimpleSerialForm from 'react-simple-serial-form';
 
 export default class Contact extends Component {
 	render() {
@@ -8,7 +9,7 @@ export default class Contact extends Component {
 			<div className="contact_wrapper">
 			<h1>Contact Us</h1>
 				<div className="contact_input_wrappers">
-					<form>
+					<SimpleSerialForm>
 						<label>First Name:</label>
 						<input type="text" name="first-name"></input>
 						<label>Last Name:</label>
@@ -19,8 +20,8 @@ export default class Contact extends Component {
 						<input type="tel" name="phone"></input>
 						<label>Message:</label>
 						<textarea rows="4" cols="50" maxLength="300"></textarea>
-						<input type="submit" value="Submit"></input>
-					</form>
+						<button type="submit">Submit</button>
+					</SimpleSerialForm>
 				</div> 
 			</div>
 		)
