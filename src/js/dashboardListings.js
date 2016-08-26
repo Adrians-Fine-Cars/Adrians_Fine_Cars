@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHitory, IndexRoute, Link } from 'react-router';
 import { ajax } from 'jquery';
 
-
 export default class DashboardListings extends Component {
 	constructor(...args){
 		super(...args);
@@ -34,7 +33,6 @@ export default class DashboardListings extends Component {
 
 	render() {
 		let { vehicles } = this.state;
-		console.log(vehicles);
 		return (
 			<div className="dashboard_listings_wrapper">
 				{ this.state.vehicles.map(::this.createResults) }

@@ -45,7 +45,7 @@ export default class CreateNewListings extends Component {
 			contentType: false
 		}).then ( response => {
 			this.setState({processing: false})
-			hashHistory.push(`/dashboard/${response.residence.id}`)
+			hashHistory.push(`/dashboard`)
 		});
 	}
 
