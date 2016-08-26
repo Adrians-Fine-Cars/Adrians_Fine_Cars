@@ -12,15 +12,33 @@ export default class VehicleOverview extends Component {
 
 	componentWillMount() {
 		let { vehicle_id } = this.props.params;
+		console.log(this.props.params);
 		console.log('vehicle_id', vehicle_id);
-		ajax
+		ajax(`https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle_id}`).then(vehicleinfo => {
+			this.setState({vehicleinfo, loading: false});
+		})
 	}
 
-	render() {
+	renderPage() {
+		let { vehicleinfo } = this.state;
+		console.log('vehicleinfo', vehicleinfo)
 		return (
-			<div className="vehicle_overview_wrapper">
-				
+			<div className="vehivle_overview_wrapper">
+				<div>{ vehicleinfo.makemodel}</div>
 			</div>
 		)
+	}
+
+	renderLoading() {
+		return (
+			<div>Loading... PLZ WAIT</div>
+		)
+	}
+
+
+
+	render() {
+		let { loading } = this.state;
+			return loading ? this.renderLoading() : this.renderPage()
 	}
 }
