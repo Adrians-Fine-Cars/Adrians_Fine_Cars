@@ -16,11 +16,12 @@ export default class Login extends Component {
 			cache: false, 
 			dataType: 'json',
 		}).then((response)=> {
-			Cookies.set('currentUser', response.access_token, {expires: 1});
+			Cookies.set( "Authorization", response.access_token, {expires: 1});
 			ajaxSetup({
-				header: { 'access_token': response.access_token }
+				header: { Authorization: "Bearer " + response.access_token }
 			})
 			hashHistory.push('/dashboard');
+			console.log("Bearer " + response.access_token);
 		}).fail(error => {
 			console.log('failed to log in');
 		});

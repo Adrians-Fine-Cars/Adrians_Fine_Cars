@@ -23,6 +23,7 @@ export default class AllInventoryListing extends Component {
 	createResults(vehicles) {
 		return (
 			<div key={ vehicles.id }>
+			<Link to={ `/vehicle_overview/${vehicles.id}`}>
 				<div>{ vehicles.makemodel }</div>
 				<div>{ vehicles.engine }</div>
 				<div>{ vehicles.transmission }</div>
@@ -30,6 +31,7 @@ export default class AllInventoryListing extends Component {
 				<div>{ vehicles.exteriorcolor }</div>
 				<div>{ vehicles.interiror }</div>
 				<div>{ vehicles.price }</div>
+			</Link>
 			</div>
 		)
 	}

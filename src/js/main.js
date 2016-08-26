@@ -17,6 +17,7 @@ ReactDOM.render ((
 		<Route path="/" component={Heading}>
 			<IndexRoute component={Home} />
 			<Route path="/inventory" component={Inventory} />
+			<Route path="/vehicle_overview" component={VehicleOverview} />
 			<Route path="/about" component={About} />
 			<Route path="/contact" component={Contact} />
 		</Route>
