@@ -21,6 +21,7 @@ export default class AllInventoryListing extends Component {
 	}
 
 	createResults(vehicles) {
+		console.log('this is vehicles ===>', vehicles);
 		return (
 			<div key={ vehicles.id }>
 			<Link to={ `/vehicle_overview/${vehicles.id}`}>
