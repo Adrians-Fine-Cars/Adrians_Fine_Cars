@@ -39,10 +39,10 @@ export default class CreateNewListings extends Component {
 			url: 'https://adrians-fine-cars-server.herokuapp.com/vehicles',
 			type: 'POST',
 			data: data,
-			cache: false,
-			dataType: 'json',
-			processData: false,
-			contentType: false
+			// cache: false,
+			// dataType: 'json',
+			// processData: false,
+			// contentType: false
 		}).then ( response => {
 			this.setState({processing: false})
 			hashHistory.push(`/dashboard`)

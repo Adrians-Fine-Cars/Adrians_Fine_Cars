@@ -16,10 +16,9 @@ export default class Login extends Component {
 			cache: false, 
 			dataType: 'json',
 		}).then((response)=> {
-			Cookies.set( "Authorization", response.access_token, {expires: 1});
-			ajaxSetup({
-				header: { Authorization: `Bearer ${response.access_token}` }
-			})
+			Cookies.set("currentUser", {Authorization: "Bearer " + response.access_token})
+			ajaxSetup({ header: Cookies.get("currentUser")
+			});
 			hashHistory.push('/dashboard');
 			console.log("Bearer " + response.access_token);
 		}).fail(error => {
