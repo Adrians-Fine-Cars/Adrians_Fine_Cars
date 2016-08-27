@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHitory, IndexRoute, Link } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute, Link } from 'react-router';
 import SimpleSerialForm from 'react-simple-serial-form';
 import Dropzone from 'react-dropzone';
 import { ajax } from 'jquery';
+import Cookies from 'js-cookie';
 
 
 
@@ -12,7 +13,7 @@ export default class CreateNewListings extends Component {
 	constructor() {
 		super();
 		this.state={
-			preview: 'http://www.martinezcreativegroup.com/wp-content/uploads/2014/05/img-placeholder.png',
+			// preview: 'http://www.martinezcreativegroup.com/wp-content/uploads/2014/05/img-placeholder.png',
 			processing: false
 		}
 	}
@@ -25,24 +26,24 @@ export default class CreateNewListings extends Component {
 	}
 
 	dataHandler(newListing) {
-		let data = new FormData();
-
-		Object.keys(newListing).forEach(key => {
-			let val = newListing[key];
-			data.append(key, val);
-			data.append('image', this.file);
-		})
-
+		console.log(Cookies.getJSON("user").user.access_token);
+		// let data = new FormData();
+		//
+		// Object.keys(newListing).forEach(key => {
+		// 	let val = newListing[key];
+		// 	data.append(key, val);
+		// 	data.append('image', this.file);
+		// })
+    console.log(newListing);
 		this.setState({processing: true})
 
 		ajax({
 			url: 'https://adrians-fine-cars-server.herokuapp.com/vehicles',
 			type: 'POST',
-			data: data,
-			// cache: false,
-			// dataType: 'json',
-			// processData: false,
-			// contentType: false
+			data: newListing,
+			headers: {
+				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
+			}
 		}).then ( response => {
 			this.setState({processing: false})
 			hashHistory.push(`/dashboard`)
@@ -111,4 +112,3 @@ export default class CreateNewListings extends Component {
 		)
 	}
 }
-

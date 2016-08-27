@@ -13,15 +13,14 @@ export default class Login extends Component {
 			url:'https://adrians-fine-cars-server.herokuapp.com/login/',
 			type: 'POST',
 			data: loginInfo,
-			cache: false, 
+			cache: false,
 			dataType: 'json',
 		}).then((response)=> {
-			Cookies.set("currentUser", {Authorization: "Bearer " + response.access_token})
-			ajaxSetup({ header: Cookies.get("currentUser")
-			});
+			console.log(response);
+			Cookies.set("user", {user: response});
 			hashHistory.push('/dashboard');
-			console.log("Bearer " + response.access_token);
 		}).fail(error => {
+			console.log(error)
 			console.log('failed to log in');
 		});
 	}
@@ -33,12 +32,12 @@ export default class Login extends Component {
 						<h1>Adrian's Garage</h1>
 						<img className="login_img" />
 					</div>
-					
+
 					<SimpleSerialForm onData={::this.dataHandler}>
 						<div className="login_container">
 							<label>Email:</label>
 							<input type="email" placeholder="Enter Email" name="email" required></input>
-						
+
 							<label>Password:</label>
 							<input type="password" placeholder="Enter Password" name="password" required></input>
 

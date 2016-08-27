@@ -24,7 +24,19 @@ export default class VehicleOverview extends Component {
 		console.log('vehicleinfo', vehicleinfo)
 		return (
 			<div className="vehivle_overview_wrapper">
-				<div>{ vehicleinfo.makemodel}</div>
+				<div>{vehicleinfo.makemodel}</div>
+				<div>{vehicleinfo.engine}</div>
+				<div>{vehicleinfo.transmission}</div>
+				<div>{vehicleinfo.mileage}</div>
+				<div>{vehicleinfo.drivetrain}</div>
+				<div>{vehicleinfo.exteriorcolor}</div>
+				<div>{vehicleinfo.interiorcolor}</div>
+				<div>{vehicleinfo.warranty}</div>
+				<div>{vehicleinfo.vin}</div>
+				<div>{vehicleinfo.stock}</div>
+				<div>{vehicleinfo.citympg}</div>
+				<div>{vehicleinfo.hwympg}</div>
+				<div>{vehicleinfo.price}</div>
 			</div>
 		)
 	}
