@@ -5,6 +5,7 @@ import SimpleSerialForm from 'react-simple-serial-form';
 import Dropzone from 'react-dropzone';
 import { ajax } from 'jquery';
 import Cookies from 'js-cookie';
+import FilePicker from 'filepicker-js';
 
 
 
@@ -57,13 +58,8 @@ export default class CreateNewListings extends Component {
 			<div className="create_new_wrapper">
 				<SimpleSerialForm onData={::this.dataHandler}>
 
-					<div className="dropzone_wrapper">
-						<Dropzone className="dropzone" onDrop={::this.dropHandler}>
-							<label className="drop_label">Vehicle Images</label>
-							<input type="hidden" value={this.state.preview} name="image"/>
-							<img className="dropzone_img" src={this.state.preview}/>
-						</Dropzone>
-					</div>
+				<input type="filepicker" data-fp-apikey="Agy7O3nhWTveC0FVAGgCnz"
+					onchange="alert(event.fpfile.url)"/>
 
 					<label>Make/Model:</label>
 					<input type="text" name="makemodel"/>
