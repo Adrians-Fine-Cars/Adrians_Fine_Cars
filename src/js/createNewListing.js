@@ -5,7 +5,7 @@ import SimpleSerialForm from 'react-simple-serial-form';
 import Dropzone from 'react-dropzone';
 import { ajax } from 'jquery';
 import Cookies from 'js-cookie';
-import FilePicker from 'filepicker-js';
+import ReactFilepicker from 'react-filepicker';
 
 
 
@@ -54,12 +54,20 @@ export default class CreateNewListings extends Component {
 
 
 	renderPage() {
+		const options = {
+			buttonText: 'Click Here To Add Images',
+			buttonClass: 'filepicker',
+			mimeType: 'image/*',
+			container: 'window',
+			services: ['COMPUTER']
+		};
+
+
 		return (
 			<div className="create_new_wrapper">
 				<SimpleSerialForm onData={::this.dataHandler}>
 
-				<input type="filepicker" data-fp-apikey="Agy7O3nhWTveC0FVAGgCnz"
-					onchange="alert(event.fpfile.url)"/>
+				<ReactFilepicker apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} />
 
 					<label>Make/Model:</label>
 					<input type="text" name="makemodel"/>
@@ -108,3 +116,6 @@ export default class CreateNewListings extends Component {
 		)
 	}
 }
+
+//				<input type="filepicker" data-fp-apikey="Agy7O3nhWTveC0FVAGgCnz"
+//					onchange="alert(event.fpfile.url)"/>
