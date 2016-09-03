@@ -36,6 +36,22 @@ export default class DashboardListings extends Component {
 		})
 	}
 
+	soldHandler(vehicle) {
+		console.log('work dude');
+		ajax({
+			url: `https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle.id}`,
+			type: 'PUT',
+			data: {"sold": true},
+			headers: {
+				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
+			}
+		}).then( response => {
+			let { vehicles } = this.state;
+			console.log('response from PUT', response.sold);
+			this.setState( {vehicles: vehicles} )
+		});
+	}
+
 	createResults(vehicles) {
 
 		return (
@@ -43,6 +59,7 @@ export default class DashboardListings extends Component {
 				<div>{ vehicles.makemodel }</div>
 				<div>{ vehicles.price }</div>
 				<button onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
+				<button id="sold_btn" onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
 			</div>
 		)
 	}

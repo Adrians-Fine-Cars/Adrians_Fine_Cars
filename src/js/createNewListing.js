@@ -19,12 +19,12 @@ export default class CreateNewListings extends Component {
 		}
 	}
 
-	dropHandler([file]) {
-		this.setState({
-			preview: file.preview
-		});
-		this.file = file;
-	}
+	// dropHandler([file]) {
+	// 	this.setState({
+	// 		preview: file.preview
+	// 	});
+	// 	this.file = file;
+	// }
 
 	dataHandler(newListing) {
 		console.log(Cookies.getJSON("user").user.access_token);
