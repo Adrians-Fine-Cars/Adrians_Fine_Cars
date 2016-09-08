@@ -37,7 +37,6 @@ export default class DashboardListings extends Component {
 	}
 
 	soldHandler(vehicle) {
-		console.log('work dude');
 		ajax({
 			url: `https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle.id}`,
 			type: 'PUT',
@@ -49,19 +48,23 @@ export default class DashboardListings extends Component {
 			let { vehicles } = this.state;
 			console.log('response from PUT', response.sold);
 			this.setState( {vehicles: vehicles} )
-		});
+			window.location.reload();
+		})
 	}
 
 	createResults(vehicles) {
-
 		return (
 			<div key={ vehicles.id }>
 				<div>{ vehicles.makemodel }</div>
 				<div>{ vehicles.price }</div>
 				<button onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
-				<button id="sold_btn" onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
+				<button id="sold_btn" className={this.soldClass(vehicles)} onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
 			</div>
 		)
+	}
+
+	soldClass(vehicle) {
+		return (vehicle.sold) ? 'sold-true' : 'sold-false';
 	}
 
 
@@ -74,3 +77,5 @@ export default class DashboardListings extends Component {
 		)
 	}
 }
+
+// (response.sold == true ) ? document.getElementById("sold_btn").style.backgroundColor = "red" : document.getElementById("sold_btn").style.backgroundColor = "white";
