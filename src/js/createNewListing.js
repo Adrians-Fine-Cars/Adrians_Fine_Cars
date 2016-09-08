@@ -15,7 +15,8 @@ export default class CreateNewListings extends Component {
 		super();
 		this.state={
 			// preview: 'http://www.martinezcreativegroup.com/wp-content/uploads/2014/05/img-placeholder.png',
-			processing: false
+			processing: false,
+			photos: []
 		}
 	}
 
@@ -38,6 +39,7 @@ export default class CreateNewListings extends Component {
     console.log(newListing);
 		this.setState({processing: true})
 
+
 		ajax({
 			url: 'https://adrians-fine-cars-server.herokuapp.com/vehicles',
 			type: 'POST',
@@ -46,12 +48,30 @@ export default class CreateNewListings extends Component {
 				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 			}
 		}).then ( response => {
-			this.setState({processing: false})
-			hashHistory.push(`/dashboard`)
+			ajax({
+				url:`https://adrians-fine-cars-server.herokuapp.com/photos/${response.id}`,
+				type: 'POST',
+				data: {
+					photos: this.photos
+			},
+				headers: {
+					Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
+				}
+			}).then(response => {
+				this.setState({processing: false})
+				hashHistory.push(`/dashboard`)
+			})
+			
 		});
 	}
 
+	photoHandler(photos){
+		console.log('photohandler', photos);
+		this.photos = photos.map(function(photo){
+			return photo.url;
+		});
 
+		}
 
 	renderPage() {
 		const options = {
@@ -63,11 +83,13 @@ export default class CreateNewListings extends Component {
 		};
 
 
+
+
 		return (
 			<div className="create_new_wrapper">
 				<SimpleSerialForm onData={::this.dataHandler}>
 
-				<ReactFilepicker apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} />
+				<ReactFilepicker apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} onSuccess={this.photoHandler}/>
 
 					<label>Make/Model:</label>
 					<input type="text" name="makemodel"/>
