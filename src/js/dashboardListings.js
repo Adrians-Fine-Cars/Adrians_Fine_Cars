@@ -52,6 +52,21 @@ export default class DashboardListings extends Component {
 		})
 	}
 
+	// featuredVehicle(vehicle) {
+	// 	ajax({
+	// 		url: 'https://adrians-fine-cars-server.herokuapp.com/vehicles/',
+	// 		type: 'PUT',
+	// 		data: {"featured: true"},
+	// 		headers: {
+	// 			Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
+	// 		}
+	// 	}).then ( response => {
+	// 		let { vehicles } = this.state;
+	// 		this.setState( {featured: vehicles} )
+	// 		window.location.reload();
+	// 	})
+	// }
+
 	createResults(vehicles) {
 		return (
 			<div key={ vehicles.id }>

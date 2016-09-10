@@ -10,7 +10,6 @@ export default class Dashboard extends Component {
 				<h1>Adrian's Garage</h1>
 				<h3>Dashboard</h3>
 				<Link to="/createNewListing"><button>Create New Listing</button></Link>
-				<Link to="/createFeaturedVehicle"><button>Add Featured Vehicle</button></Link>
 				<DashboardListings />
 			</div>
 		)

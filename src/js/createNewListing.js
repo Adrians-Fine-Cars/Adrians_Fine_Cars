@@ -49,7 +49,7 @@ export default class CreateNewListings extends Component {
 			}
 		}).then ( response => {
 			ajax({
-				url:`https://adrians-fine-cars-server.herokuapp.com/photos/${response.id}`,
+				url: 'https://adrians-fine-cars-server.herokuapp.com/photos/',
 				type: 'POST',
 				data: {
 					photos: this.photos
