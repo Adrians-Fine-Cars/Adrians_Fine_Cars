@@ -58,6 +58,7 @@ export default class CreateNewListings extends Component {
 					Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 				}
 			}).then(response => {
+				console.log('response after photo post...', response);
 				this.setState({processing: false})
 				hashHistory.push(`/dashboard`)
 			})
@@ -68,6 +69,7 @@ export default class CreateNewListings extends Component {
 	photoHandler(photos){
 		console.log('photohandler', photos);
 		this.photos = photos.map(function(photo){
+			console.log('photo.url===>', photo.url);
 			return photo.url;
 		});
 

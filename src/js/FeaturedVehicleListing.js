@@ -13,10 +13,10 @@ export default class FeaturedVehicleListing extends Component {
 		return (
 			<div className="slider_container">
 				<Slider {...settings}>
-					<div><img src='http://placekitten.com/g/400/200' /></div>
-					<div><img src='http://placekitten.com/g/400/200' /></div>
-					<div><img src='http://placekitten.com/g/400/200' /></div>
-					<div><img src='http://placekitten.com/g/400/200' /></div>
+		  			<div><img src='http://placekitten.com/g/400/200' /></div>
+          			<div><img src='http://placekitten.com/g/400/200' /></div>
+          			<div><img src='http://placekitten.com/g/400/200' /></div>
+          			<div><img src='http://placekitten.com/g/400/200' /></div>
 				</Slider>
 			</div>
 		)
