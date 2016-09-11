@@ -48,12 +48,13 @@ export default class CreateNewListings extends Component {
 				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 			}
 		}).then ( response => {
+			console.log('this is this.photos...', this.state.photos);
 			ajax({
-				url: 'https://adrians-fine-cars-server.herokuapp.com/photos/',
+				url: `https://adrians-fine-cars-server.herokuapp.com/photos/${response.id}`,
 				type: 'POST',
 				data: {
-					photos: this.photos
-			},
+					photos: this.state.photos
+				},
 				headers: {
 					Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 				}
@@ -68,11 +69,14 @@ export default class CreateNewListings extends Component {
 
 	photoHandler(photos){
 		console.log('photohandler', photos);
-		this.photos = photos.map(function(photo){
+		let photogroup = photos.map(function(photo){
 			console.log('photo.url===>', photo.url);
-			return photo.url;
+			return {photo_url: photo.url};
 		});
-
+			this.setState({
+				photos: photogroup
+			})
+			console.log('photogroup work doi', photogroup);
 		}
 
 	renderPage() {
