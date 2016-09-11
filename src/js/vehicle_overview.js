@@ -21,22 +21,21 @@ export default class VehicleOverview extends Component {
 
 	renderPage() {
 		let { vehicleinfo } = this.state;
-		console.log('vehicleinfo', vehicleinfo)
 		return (
 			<div className="vehivle_overview_wrapper">
-				<div>{vehicleinfo.makemodel}</div>
-				<div>{vehicleinfo.engine}</div>
-				<div>{vehicleinfo.transmission}</div>
-				<div>{vehicleinfo.mileage}</div>
-				<div>{vehicleinfo.drivetrain}</div>
-				<div>{vehicleinfo.exteriorcolor}</div>
-				<div>{vehicleinfo.interiorcolor}</div>
-				<div>{vehicleinfo.warranty}</div>
-				<div>{vehicleinfo.vin}</div>
-				<div>{vehicleinfo.stock}</div>
-				<div>{vehicleinfo.citympg}</div>
-				<div>{vehicleinfo.hwympg}</div>
-				<div>{vehicleinfo.price}</div>
+				<div>{vehicleinfo.vehicle.makemodel}</div>
+				<div>{vehicleinfo.vehicle.engine}</div>
+				<div>{vehicleinfo.vehicle.transmission}</div>
+				<div>{vehicleinfo.vehicle.mileage}</div>
+				<div>{vehicleinfo.vehicle.drivetrain}</div>
+				<div>{vehicleinfo.vehicle.exteriorcolor}</div>
+				<div>{vehicleinfo.vehicle.interiorcolor}</div>
+				<div>{vehicleinfo.vehicle.warranty}</div>
+				<div>{vehicleinfo.vehicle.vin}</div>
+				<div>{vehicleinfo.vehicle.stock}</div>
+				<div>{vehicleinfo.vehicle.citympg}</div>
+				<div>{vehicleinfo.vehicle.hwympg}</div>
+				<div>{vehicleinfo.vehicle.price}</div>
 			</div>
 		)
 	}

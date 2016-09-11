@@ -95,7 +95,7 @@ export default class CreateNewListings extends Component {
 			<div className="create_new_wrapper">
 				<SimpleSerialForm onData={::this.dataHandler}>
 
-				<ReactFilepicker apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} onSuccess={this.photoHandler}/>
+				<ReactFilepicker apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} onSuccess={::this.photoHandler}/>
 
 					<label>Make/Model:</label>
 					<input type="text" name="makemodel"/>
