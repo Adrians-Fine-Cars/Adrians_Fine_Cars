@@ -19,24 +19,37 @@ export default class VehicleOverview extends Component {
 		})
 	}
 
+	mapPhotos(photos){
+		 /*map the photos to img tags*/
+			return photos.map(photo => {
+			return (
+				<div key={photo.id}>
+					<img src={photo.photo_url}></img>
+				</div>
+			)
+		})
+	}
+
 	renderPage() {
-		let { vehicleinfo } = this.state;
-		console.log('this is vehicleinfo', vehicleinfo);
+		/*Different way to destructure the state object so it's more consise*/
+		let { photos, vehicle } = this.state.vehicleinfo;
 		return (
 			<div className="vehivle_overview_wrapper">
-				<div>{vehicleinfo.vehicle.makemodel}</div>
-				<div>{vehicleinfo.vehicle.engine}</div>
-				<div>{vehicleinfo.vehicle.transmission}</div>
-				<div>{vehicleinfo.vehicle.mileage}</div>
-				<div>{vehicleinfo.vehicle.drivetrain}</div>
-				<div>{vehicleinfo.vehicle.exteriorcolor}</div>
-				<div>{vehicleinfo.vehicle.interiorcolor}</div>
-				<div>{vehicleinfo.vehicle.warranty}</div>
-				<div>{vehicleinfo.vehicle.vin}</div>
-				<div>{vehicleinfo.vehicle.stock}</div>
-				<div>{vehicleinfo.vehicle.citympg}</div>
-				<div>{vehicleinfo.vehicle.hwympg}</div>
-				<div>{vehicleinfo.vehicle.price}</div>
+				<div>{vehicle.makemodel}</div>
+				<div>{vehicle.engine}</div>
+				<div>{vehicle.transmission}</div>
+				<div>{vehicle.mileage}</div>
+				<div>{vehicle.drivetrain}</div>
+				<div>{vehicle.exteriorcolor}</div>
+				<div>{vehicle.interiorcolor}</div>
+				<div>{vehicle.warranty}</div>
+				<div>{vehicle.vin}</div>
+				<div>{vehicle.stock}</div>
+				<div>{vehicle.citympg}</div>
+				<div>{vehicle.hwympg}</div>
+				<div>{vehicle.price}</div>
+				{/*Puts the images on the page*/}
+				{this.mapPhotos(photos)}
 			</div>
 		)
 	}
