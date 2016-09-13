@@ -21,6 +21,7 @@ export default class VehicleOverview extends Component {
 
 	renderPage() {
 		let { vehicleinfo } = this.state;
+		console.log('this is vehicleinfo', vehicleinfo);
 		return (
 			<div className="vehivle_overview_wrapper">
 				<div>{vehicleinfo.vehicle.makemodel}</div>
