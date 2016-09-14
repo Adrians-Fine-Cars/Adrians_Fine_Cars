@@ -21,11 +21,9 @@ export default class AllInventoryListing extends Component {
 	}
 
 	createResults(vehicles) {
-		console.log('this is vehicles ===>', vehicles.photos);
 		return (
 			<div key={ vehicles.id }>
 			<Link to={ `/vehicle_overview/${vehicles.id}`}>
-				<img src={ vehicles.photos.photo_url} />
 				<div>{ vehicles.makemodel }</div>
 				<div>{ vehicles.engine }</div>
 				<div>{ vehicles.transmission }</div>

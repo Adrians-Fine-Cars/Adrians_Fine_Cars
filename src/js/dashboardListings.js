@@ -52,20 +52,20 @@ export default class DashboardListings extends Component {
 		})
 	}
 
-	// featuredVehicle(vehicle) {
-	// 	ajax({
-	// 		url: 'https://adrians-fine-cars-server.herokuapp.com/vehicles/',
-	// 		type: 'PUT',
-	// 		data: {"featured: true"},
-	// 		headers: {
-	// 			Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
-	// 		}
-	// 	}).then ( response => {
-	// 		let { vehicles } = this.state;
-	// 		this.setState( {featured: vehicles} )
-	// 		window.location.reload();
-	// 	})
-	// }
+	featuredHandler(vehicle) {
+		ajax({
+			url: `https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle.id}`,
+			type: 'PUT',
+			data: {"featured": true},
+			headers: {
+				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
+			}
+		}).then ( response => {
+			let { vehicles } = this.state;
+			this.setState( {featured: vehicles} )
+			window.location.reload();
+		})
+	}
 
 	createResults(vehicles) {
 		return (
@@ -74,6 +74,7 @@ export default class DashboardListings extends Component {
 				<div>{ vehicles.price }</div>
 				<button onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
 				<button id="sold_btn" className={this.soldClass(vehicles)} onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
+				<button id="featured_btn" className={this.featuredClass(vehicles)} onClick={this.featuredHandler.bind(this, vehicles)}>Featured</button>
 			</div>
 		)
 	}
@@ -82,6 +83,9 @@ export default class DashboardListings extends Component {
 		return (vehicle.sold) ? 'sold-true' : 'sold-false';
 	}
 
+	featuredClass(vehicle) {
+		return (vehicle.featured) ? 'featured-true' : 'featured-false';
+	}
 
 	render() {
 		let { vehicles } = this.state;

@@ -35,6 +35,8 @@ export default class VehicleOverview extends Component {
 		let { photos, vehicle } = this.state.vehicleinfo;
 		return (
 			<div className="vehivle_overview_wrapper">
+				{/*Puts the images on the page*/}
+				{this.mapPhotos(photos)}
 				<div>{vehicle.makemodel}</div>
 				<div>{vehicle.engine}</div>
 				<div>{vehicle.transmission}</div>
@@ -48,8 +50,6 @@ export default class VehicleOverview extends Component {
 				<div>{vehicle.citympg}</div>
 				<div>{vehicle.hwympg}</div>
 				<div>{vehicle.price}</div>
-				{/*Puts the images on the page*/}
-				{this.mapPhotos(photos)}
 			</div>
 		)
 	}
