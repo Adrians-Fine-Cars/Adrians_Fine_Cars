@@ -21,16 +21,19 @@ export default class AllInventoryListing extends Component {
 	}
 
 	createResults(vehicles) {
+		let photo = vehicles.photos.slice(-1)[0];
+
 		return (
 			<div key={ vehicles.id }>
 			<Link to={ `/vehicle_overview/${vehicles.id}`}>
-				<div>{ vehicles.makemodel }</div>
-				<div>{ vehicles.engine }</div>
-				<div>{ vehicles.transmission }</div>
-				<div>{ vehicles.mileage }</div> 
-				<div>{ vehicles.exteriorcolor }</div>
-				<div>{ vehicles.interiror }</div>
-				<div>{ vehicles.price }</div>
+				<h1>{ vehicles.makemodel }</h1>
+				<img src={ photo.photo_url}></img>
+				<div>Engine: { vehicles.engine }</div>
+				<div>Transmission: { vehicles.transmission }</div>
+				<div>Mileage: { vehicles.mileage }</div> 
+				<div>Exterior Color: { vehicles.exteriorcolor }</div>
+				<div>Interior Color: { vehicles.interiror }</div>
+				<div>Price: { vehicles.price }</div>
 			</Link>
 			</div>
 		)

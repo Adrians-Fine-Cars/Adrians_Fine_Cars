@@ -79,8 +79,8 @@ export default class DashboardListings extends Component {
 		return (
 			<div key={ vehicles.id }>
 				<img src={ photo.photo_url}></img>
-				<div>{ vehicles.makemodel }</div>
-				<div>{ vehicles.price }</div>
+				<div>Make/Model: { vehicles.makemodel }</div>
+				<div>Price: { vehicles.price }</div>
 				<button onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
 				<button id="sold_btn" className={this.soldClass(vehicles)} onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
 				<button id="featured_btn" className={this.featuredClass(vehicles)} onClick={this.featuredHandler.bind(this, vehicles)}>Featured</button>
