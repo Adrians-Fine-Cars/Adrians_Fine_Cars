@@ -77,7 +77,7 @@ export default class DashboardListings extends Component {
 		// console.log('slicetown---->', vehicles.photos.slice(-1)[0]);
 		let photo = vehicles.photos.slice(-1)[0];
 		return (
-			<div key={ vehicles.id }>
+			<div className="dashboard-listing-wrapper" key={ vehicles.id }>
 				<img src={ photo.photo_url}></img>
 				<div>Make/Model: { vehicles.makemodel }</div>
 				<div>Price: { vehicles.price }</div>
