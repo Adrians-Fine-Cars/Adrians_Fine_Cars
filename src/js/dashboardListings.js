@@ -67,9 +67,18 @@ export default class DashboardListings extends Component {
 		})
 	}
 
+	// singlePhoto(photo) {
+	// 	let single = vehicles.photos;
+	// 	return single.slice(-1)[0];
+	// }
+
 	createResults(vehicles) {
+		// console.log('vehicles.photos =====>', vehicles.photos);
+		// console.log('slicetown---->', vehicles.photos.slice(-1)[0]);
+		let photo = vehicles.photos.slice(-1)[0];
 		return (
 			<div key={ vehicles.id }>
+				<img src={ photo.photo_url}></img>
 				<div>{ vehicles.makemodel }</div>
 				<div>{ vehicles.price }</div>
 				<button onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
