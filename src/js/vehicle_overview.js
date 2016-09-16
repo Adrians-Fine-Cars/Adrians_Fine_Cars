@@ -37,19 +37,19 @@ export default class VehicleOverview extends Component {
 			<div className="vehivle_overview_wrapper">
 				{/*Puts the images on the page*/}
 				{this.mapPhotos(photos)}
-				<div>{vehicle.makemodel}</div>
-				<div>{vehicle.engine}</div>
-				<div>{vehicle.transmission}</div>
-				<div>{vehicle.mileage}</div>
-				<div>{vehicle.drivetrain}</div>
-				<div>{vehicle.exteriorcolor}</div>
-				<div>{vehicle.interiorcolor}</div>
-				<div>{vehicle.warranty}</div>
-				<div>{vehicle.vin}</div>
-				<div>{vehicle.stock}</div>
-				<div>{vehicle.citympg}</div>
-				<div>{vehicle.hwympg}</div>
-				<div>{vehicle.price}</div>
+				<div>Make & Model: {vehicle.makemodel}</div>
+				<div>Engine: {vehicle.engine}</div>
+				<div>Transmission: {vehicle.transmission}</div>
+				<div>Mileage: {vehicle.mileage}</div>
+				<div>Drivetrain: {vehicle.drivetrain}</div>
+				<div>Exterior Color: {vehicle.exteriorcolor}</div>
+				<div>Interior Color: {vehicle.interiorcolor}</div>
+				<div>Warranty: {vehicle.warranty}</div>
+				<div>VIN #: {vehicle.vin}</div>
+				<div>Stock #:{vehicle.stock}</div>
+				<div>CITY Mpg: {vehicle.citympg}</div>
+				<div>HWY Mpg: {vehicle.hwympg}</div>
+				<div>Price: {vehicle.price}</div>
 			</div>
 		)
 	}
