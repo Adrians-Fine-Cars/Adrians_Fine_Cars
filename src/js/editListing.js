@@ -11,8 +11,7 @@ export default class editListing extends Component {
 constructor() {
 		super();
 		this.state={
-			processing: false,
-			loading: true,
+			processing: true,
 			vehicleinfo: {}
 		}
 	}
@@ -22,7 +21,7 @@ componentWillMount() {
 	console.log(this.props.params);
 	console.log('vehicle_id', vehicle_id);
 	ajax(`https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle_id}`).then(vehicleinfo => {
-			this.setState({vehicleinfo, loading: false});
+			this.setState({vehicleinfo, processing: false});
 	})
 }
 
@@ -39,7 +38,7 @@ renderPage(){
 				<SimpleSerialForm onData={::this.dataHandler}>
 
 					<label>Make/Model:</label>
-					<input type="text" name="makemodel"/>
+					<input type="text" name="makemodel" placeholder={einfo.makemodel}/>
 					<label>Engine:</label>
 					<input type="text" name="engine"/>
 					<label>Transmission</label>
@@ -70,7 +69,7 @@ renderPage(){
 			</div>
 		)
 }
-	
+
 
 	renderProcessing() {
 	return (
