@@ -12,21 +12,18 @@ constructor() {
 		super();
 		this.state={
 			processing: false,
-			vehicles: []
+			vehicleinfo: {}
 		}
 	}
 
 componentWillMount() {
-	ajax({
-			url: 'https://adrians-fine-cars-server.herokuapp.com/vehicles/',
-			type: 'GET',
-			cache: false,
-			dataType: 'json'
-		}).then( response => {
-			this.setState( {vehicles: response} );
-			console.log('response', response);
-		});
-	}
+	let { vehicle_id } = this.props.params;
+	console.log(this.props.params);
+	console.log('vehicle_id', vehicle_id);
+	ajax(`https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle_id}`).then(vehicleinfo => {
+			this.setState({vehicleinfo, loading: false});
+	})
+}
 
 dataHandler(vehicle){
 
@@ -34,6 +31,10 @@ dataHandler(vehicle){
 
 
 renderPage(){
+	let vehicle = this.state.vehicleinfo;
+	let einfo = vehicle.vehicle;
+	console.log("einfo", einfo);
+	console.log('vehicle!!!!!', vehicle);
 	return (
 			<div className="create_new_wrapper">
 				<SimpleSerialForm onData={::this.dataHandler}>
