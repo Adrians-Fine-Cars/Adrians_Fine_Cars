@@ -12,6 +12,7 @@ constructor() {
 		super();
 		this.state={
 			processing: false,
+			loading: true,
 			vehicleinfo: {}
 		}
 	}
@@ -31,10 +32,8 @@ dataHandler(vehicle){
 
 
 renderPage(){
-	let vehicle = this.state.vehicleinfo;
-	let einfo = vehicle.vehicle;
+	let einfo = this.state.vehicleinfo.vehicle;
 	console.log("einfo", einfo);
-	console.log('vehicle!!!!!', vehicle);
 	return (
 			<div className="create_new_wrapper">
 				<SimpleSerialForm onData={::this.dataHandler}>
