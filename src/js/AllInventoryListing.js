@@ -26,7 +26,7 @@ export default class AllInventoryListing extends Component {
 		return (
 			<div key={ vehicles.id }>
 			<Link to={ `/vehicle_overview/${vehicles.id}`}>
-				<h1>{ vehicles.makemodel }</h1>
+				<h2>{ vehicles.makemodel }</h2>
 				<img src={ photo.photo_url}></img>
 				<div>Engine: { vehicles.engine }</div>
 				<div>Transmission: { vehicles.transmission }</div>

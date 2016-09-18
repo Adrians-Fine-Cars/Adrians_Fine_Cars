@@ -10,6 +10,7 @@ import Contact from './contact';
 import Login from './login';
 import Dashboard from './dashboard';
 import CreateNewListing from './createNewListing';
+import editListing from './editListing';
 
 
 
@@ -25,5 +26,6 @@ ReactDOM.render ((
 		<Route path="/login" component={Login} />
 		<Route path="/dashboard" component={Dashboard} />
 		<Route path="/createNewListing" component={CreateNewListing} />
+		<Route path="/editListing/:vehicle_id" component={editListing} />
 	</Router>
 	), document.querySelector('.container'));

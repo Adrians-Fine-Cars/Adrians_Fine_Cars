@@ -82,6 +82,7 @@ export default class DashboardListings extends Component {
 				<div>Make/Model: { vehicles.makemodel }</div>
 				<div>Price: { vehicles.price }</div>
 				<button onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
+				<Link to={`/editListing/${vehicles.id}`}><button>Edit</button></Link>
 				<button id="sold_btn" className={this.soldClass(vehicles)} onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
 				<button id="featured_btn" className={this.featuredClass(vehicles)} onClick={this.featuredHandler.bind(this, vehicles)}>Featured</button>
 			</div>
