@@ -40,7 +40,7 @@ export default class DashboardListings extends Component {
 		ajax({
 			url: `https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle.id}`,
 			type: 'PUT',
-			data: {"sold": true},
+			data: {"sold": !vehicle.sold},
 			headers: {
 				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 			}
@@ -56,7 +56,7 @@ export default class DashboardListings extends Component {
 		ajax({
 			url: `https://adrians-fine-cars-server.herokuapp.com/vehicles/${vehicle.id}`,
 			type: 'PUT',
-			data: {"featured": true},
+			data: {"featured": !vehicle.featured},
 			headers: {
 				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 			}
