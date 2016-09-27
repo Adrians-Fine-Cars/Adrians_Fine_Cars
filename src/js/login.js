@@ -27,26 +27,33 @@ export default class Login extends Component {
 
 	render() {
 		return (
-			<div className="login_page_wrapper">
-					<div className="login_img_container">
-						<h1>Adrian's Garage</h1>
-						<img className="login_img" />
-					</div>
+				<div className="ag-section login">
+    				<div className="login-container w-container">
+      				<div className="ag-flexwrapper">
+        				<h2 className="ag-landing-title">Adrian's Garage</h2>
 
 					<SimpleSerialForm onData={::this.dataHandler}>
-						<div className="login_container">
-							<label>Email:</label>
-							<input type="email" placeholder="Enter Email" name="email" required></input>
-
-							<label>Password:</label>
-							<input type="password" placeholder="Enter Password" name="password" required></input>
-
-							<div>
-								<button type="submit">Login</button>
-							</div>
-						</div>
+        				<div className="w-form">
+            				<input className="ag-login-textfield w-input" data-name="email" id="email" maxLength="256" name="email" placeholder="Enter Email" required="required" type="email"></input>
+            				<input className="ag-login-textfield w-input" data-name="password" id="password" maxLength="256" name="password" placeholder="Password" required="required" type="password"></input>
+            				<input className="ag-login-button w-button" data-wait="Please wait..." type="submit" value="Submit"></input>
+        				</div>
 					</SimpleSerialForm>
+				</div>
+				</div>
 			</div>
 		)
 	}
 }
+
+						// <div className="login_container">
+						// 	<label>Email:</label>
+						// 	<input type="email" placeholder="Enter Email" name="email" required></input>
+
+						// 	<label>Password:</label>
+						// 	<input type="password" placeholder="Enter Password" name="password" required></input>
+
+						// 	<div>
+						// 		<button type="submit">Login</button>
+						// 	</div>
+						// </div>

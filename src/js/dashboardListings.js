@@ -67,24 +67,20 @@ export default class DashboardListings extends Component {
 		})
 	}
 
-	// singlePhoto(photo) {
-	// 	let single = vehicles.photos;
-	// 	return single.slice(-1)[0];
-	// }
 
 	createResults(vehicles) {
-		// console.log('vehicles.photos =====>', vehicles.photos);
-		// console.log('slicetown---->', vehicles.photos.slice(-1)[0]);
 		let photo = vehicles.photos.slice(-1)[0];
 		return (
-			<div className="dashboard-listing-wrapper" key={ vehicles.id }>
-				<img src={ photo.photo_url}></img>
-				<div>Make/Model: { vehicles.makemodel }</div>
-				<div>Price: { vehicles.price }</div>
-				<button onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
-				<Link to={`/editListing/${vehicles.id}`}><button>Edit</button></Link>
-				<button id="sold_btn" className={this.soldClass(vehicles)} onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
-				<button id="featured_btn" className={this.featuredClass(vehicles)} onClick={this.featuredHandler.bind(this, vehicles)}>Featured</button>
+			<div className="dashboard-listings-wrapper" key={ vehicles.id }>
+				<div className="dashboard-buttons-wrapper">
+					<button className="dashboard-listing-buttons" onClick={ this.deleteHandler.bind(this, vehicles)}>Delete</button>
+					<Link to={`/editListing/${vehicles.id}`}><button className="dashboard-listing-buttons">Edit</button></Link>
+					<button className="dashboard-listing-buttons" id="sold_btn" className={this.soldClass(vehicles)} onClick={this.soldHandler.bind(this, vehicles)}>Sold</button>
+					<button className="dashboard-listing-buttons"  id="featured_btn" className={this.featuredClass(vehicles)} onClick={this.featuredHandler.bind(this, vehicles)}>Featured</button>
+				</div>
+				<img className="dashboard-listing-image" src={ photo.photo_url}></img>
+				<div className="dashboard-listing-text">Make/Model: { vehicles.makemodel }</div>
+				<div className="dashboard-listing-text">Price: { vehicles.price }</div>
 			</div>
 		)
 	}
@@ -100,11 +96,10 @@ export default class DashboardListings extends Component {
 	render() {
 		let { vehicles } = this.state;
 		return (
-			<div className="dashboard_listings_wrapper">
+			<div className="dashboard-mapped-wrapper">
 				{ this.state.vehicles.map(::this.createResults) }
 			</div>
 		)
 	}
 }
 
-// (response.sold == true ) ? document.getElementById("sold_btn").style.backgroundColor = "red" : document.getElementById("sold_btn").style.backgroundColor = "white";

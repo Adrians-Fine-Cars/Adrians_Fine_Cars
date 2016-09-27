@@ -6,11 +6,13 @@ import DashboardListings from './dashboardListings';
 export default class Dashboard extends Component {
 	render() {
 		return (
-			<div className="dashboard_page_wrapper">
-				<h1>Adrian's Garage</h1>
-				<h3>Dashboard</h3>
-				<Link to="/createNewListing"><button>Create New Listing</button></Link>
-				<DashboardListings />
+			<div className="ag-section dashboard">
+    			<h2 className="ag-dashboard-title">Adrian's Garage</h2>
+    			<h3 className="ag-dashboard-text">Dashboard</h3>
+				<Link to="/createNewListing"><button className="ag-dash-cnlbutton w-button">Create New Listing</button></Link>
+					<div className="dashboard-page-wrapper">
+						<DashboardListings />
+					</div>
 			</div>
 		)
 	}
