@@ -46,39 +46,45 @@ renderPage(){
 	let einfo = this.state.vehicleinfo.vehicle;
 	console.log("einfo", einfo);
 	return (
-			<div className="create_new_wrapper">
-				<h2>Edit Your Vehicles Information</h2>
-				<SimpleSerialForm onData={::this.dataHandler}>
-
-					<label>Make/Model:</label>
-					<input type="text" name="makemodel" placeholder={einfo.makemodel}/>
-					<label>Engine:</label>
-					<input type="text" name="engine" placeholder={einfo.engine}/>
-					<label>Transmission</label>
-					<input type="text" name="transmission" placeholder={einfo.transmission}/>
-					<label>Mileage:</label>
-					<input type="text" name="mileage" placeholder={einfo.mileage}/>
-					<label>Drivetrain:</label>
-					<input type="text" name="drivetrain" placeholder={einfo.drivetrain}/>
-					<label>Exterior Color</label>
-					<input type="text" name="exteriorcolor" placeholder={einfo.exteriorcolor}/>
-					<label>Interior Color</label>
-					<input type="text" name="interiorcolor" placeholder={einfo.interiorcolor}/>
-					<label>Warranty:</label>
-					<input type="text" name="warranty" placeholder={einfo.warranty}/>
-					<label>VIN:</label>
-					<input type="text" name="vin" placeholder={einfo.vin}/>
-					<label>Stock:</label>
-					<input type="text" name="stock" placeholder={einfo.stock}/>
-					<label>City MPG:</label>
-					<input type="number" name="citympg" placeholder={einfo.citympg}/>
-					<label>Hwy MPG:</label>
-					<input type="number" name="hwympg" placeholder={einfo.hwympg}/>
-					<label>Price</label>
-					<input type="number" name="price" placeholder={einfo.price}/>
-					<button type="submit">Submit</button>
-					<Link to="/dashboard">Cancel</Link>
-				</SimpleSerialForm>
+			<div className="ag-section cnl">
+				<h2 className="ag-dashboard-title">Adrian's Garage</h2>
+				<h2 className="ag-dashboard-text">Edit Your Vehicles Information</h2>
+				<div className="cnl-form-wrapper w-form">
+					<SimpleSerialForm onData={::this.dataHandler}>
+						<div className="cnl-column-one">
+							<label className="cnl-label">Make/Model:</label>
+							<input className="cnl-input-field w-input" type="text" name="makemodel" placeholder={einfo.makemodel}/>
+							<label className="cnl-label">Engine:</label>
+							<input className="cnl-input-field w-input" type="text" name="engine" placeholder={einfo.engine}/>
+							<label className="cnl-label">Transmission</label>
+							<input className="cnl-input-field w-input" type="text" name="transmission" placeholder={einfo.transmission}/>
+							<label className="cnl-label">Mileage:</label>
+							<input className="cnl-input-field w-input" type="text" name="mileage" placeholder={einfo.mileage}/>
+							<label className="cnl-label">Drivetrain:</label>
+							<input className="cnl-input-field w-input" type="text" name="drivetrain" placeholder={einfo.drivetrain}/>
+							<label className="cnl-label">Exterior Color</label>
+							<input className="cnl-input-field w-input" type="text" name="exteriorcolor" placeholder={einfo.exteriorcolor}/>
+						</div>
+						<div className="cnl-column-two">
+							<label className="cnl-label">Interior Color</label>
+							<input className="cnl-input-field w-input" type="text" name="interiorcolor" placeholder={einfo.interiorcolor}/>
+							<label className="cnl-label">Warranty:</label>
+							<input className="cnl-input-field w-input" type="text" name="warranty" placeholder={einfo.warranty}/>
+							<label className="cnl-label">VIN:</label>
+							<input className="cnl-input-field w-input" type="text" name="vin" placeholder={einfo.vin}/>
+							<label className="cnl-label">Stock:</label>
+							<input className="cnl-input-field w-input" type="text" name="stock" placeholder={einfo.stock}/>
+							<label className="cnl-label">City MPG:</label>
+							<input className="cnl-input-field w-input" type="number" name="citympg" placeholder={einfo.citympg}/>
+							<label className="cnl-label">Hwy MPG:</label>
+							<input className="cnl-input-field w-input" type="number" name="hwympg" placeholder={einfo.hwympg}/>
+							<label className="cnl-label">Price</label>
+							<input className="cnl-input-field w-input" type="number" name="price" placeholder={einfo.price}/>
+							<button className="cnl-submit-btn w-button" type="submit">Submit</button>
+							<Link to="/dashboard" className="cnl-cancel-btn w-button">Cancel</Link>
+						</div>
+					</SimpleSerialForm>
+				</div>
 			</div>
 		)
 }

@@ -112,6 +112,8 @@ button.filepicker:hover {
   -webkit-transition: background-color 200ms ease, opacity 500ms ease;
   transition: background-color 200ms ease, opacity 500ms ease;
   color: white;
+  text-align: center;
+  text-decoration: none;
 }
 
 .cnl-cancel-btn:hover {
@@ -121,9 +123,8 @@ button.filepicker:hover {
 
 .cnl-submit-btn {
   padding: 10px;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 15px;
+  margin-top: 30px;
+  margin-left: 10px;
   border: 2px solid #00ade4;
   border-radius: 7px;
   background-color: #00ade4;

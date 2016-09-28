@@ -96,7 +96,6 @@ export default class CreateNewListings extends Component {
 			  <h2 className="ag-dashboard-title">Adrian's Garage</h2>
     		  <h3 className="ag-dashboard-text">Create new listing</h3>
     		  	<div className="cnl-form-wrapper w-form">
-    		  		
 						<SimpleSerialForm onData={::this.dataHandler}>
 							<div className="cnl-images-wrapper">
 								<ReactFilepicker id="cnl-addimages-button" apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} onSuccess={::this.photoHandler}/>
@@ -131,10 +130,9 @@ export default class CreateNewListings extends Component {
 								<label className="cnl-label">Price</label>
 								<input className="cnl-input-field w-input" type="number" name="price"/>
 								<button className="cnl-submit-btn w-button" type="submit">Submit</button>
-								<Link to="/dashboard"><button className="cnl-cancel-btn w-button">Cancel</button></Link>
+								<Link to="/dashboard" className="cnl-cancel-btn w-button">Cancel</Link>
 							</div>
 						</SimpleSerialForm>
-					
 				</div>
 			</div>
 		)
