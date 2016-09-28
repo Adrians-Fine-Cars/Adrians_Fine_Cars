@@ -92,40 +92,50 @@ export default class CreateNewListings extends Component {
 
 
 		return (
-			<div className="create_new_wrapper">
-				<SimpleSerialForm onData={::this.dataHandler}>
-
-				<ReactFilepicker apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} onSuccess={::this.photoHandler}/>
-
-					<label>Make/Model:</label>
-					<input type="text" name="makemodel"/>
-					<label>Engine:</label>
-					<input type="text" name="engine"/>
-					<label>Transmission</label>
-					<input type="text" name="transmission"/>
-					<label>Mileage:</label>
-					<input type="text" name="mileage"/>
-					<label>Drivetrain:</label>
-					<input type="text" name="drivetrain"/>
-					<label>Exterior Color</label>
-					<input type="text" name="exteriorcolor"/>
-					<label>Interior Color</label>
-					<input type="text" name="interiorcolor"/>
-					<label>Warranty:</label>
-					<input type="text" name="warranty"/>
-					<label>VIN:</label>
-					<input type="text" name="vin"/>
-					<label>Stock:</label>
-					<input type="text" name="stock"/>
-					<label>City MPG:</label>
-					<input type="number" name="citympg"/>
-					<label>Hwy MPG:</label>
-					<input type="number" name="hwympg"/>
-					<label>Price</label>
-					<input type="number" name="price"/>
-					<button type="submit">Submit</button>
-					<Link to="/dashboard">Cancel</Link>
-				</SimpleSerialForm>
+			<div className="ag-section cnl">
+			  <h2 className="ag-dashboard-title">Adrian's Garage</h2>
+    		  <h3 className="ag-dashboard-text">Create new listing</h3>
+    		  	<div className="cnl-form-wrapper w-form">
+    		  		
+						<SimpleSerialForm onData={::this.dataHandler}>
+							<div className="cnl-images-wrapper">
+								<ReactFilepicker id="cnl-addimages-button" apikey="Agy7O3nhWTveC0FVAGgCnz" mode="pickMultiple" defaultWidget={false} options={options} onSuccess={::this.photoHandler}/>
+							</div>
+							 <div className="cnl-column-one">
+								<label className="cnl-label">Make/Model:</label>
+								<input className="cnl-input-field w-input" type="text" name="makemodel"/>
+								<label className="cnl-label">Engine:</label>
+								<input className="cnl-input-field w-input" type="text" name="engine"/>
+								<label className="cnl-label">Transmission</label>
+								<input className="cnl-input-field w-input" type="text" name="transmission"/>
+								<label className="cnl-label">Mileage:</label>
+								<input className="cnl-input-field w-input" type="text" name="mileage"/>
+								<label className="cnl-label">Drivetrain:</label>
+								<input className="cnl-input-field w-input" type="text" name="drivetrain"/>
+								<label className="cnl-label">Exterior Color</label>
+								<input className="cnl-input-field w-input" type="text" name="exteriorcolor"/>
+							</div>
+							<div className="cnl-column-two">
+								<label className="cnl-label">Interior Color</label>
+								<input className="cnl-input-field w-input" type="text" name="interiorcolor"/>
+								<label className="cnl-label">Warranty:</label>
+								<input className="cnl-input-field w-input" type="text" name="warranty"/>
+								<label className="cnl-label">VIN:</label>
+								<input className="cnl-input-field w-input" type="text" name="vin"/>
+								<label className="cnl-label">Stock:</label>
+								<input className="cnl-input-field w-input" type="text" name="stock"/>
+								<label className="cnl-label">City MPG:</label>
+								<input className="cnl-input-field w-input" type="number" name="citympg"/>
+								<label className="cnl-label">Hwy MPG:</label>
+								<input className="cnl-input-field w-input" type="number" name="hwympg"/>
+								<label className="cnl-label">Price</label>
+								<input className="cnl-input-field w-input" type="number" name="price"/>
+								<button className="cnl-submit-btn w-button" type="submit">Submit</button>
+								<Link to="/dashboard"><button className="cnl-cancel-btn w-button">Cancel</button></Link>
+							</div>
+						</SimpleSerialForm>
+					
+				</div>
 			</div>
 		)
 	}

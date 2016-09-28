@@ -10,8 +10,12 @@ export default class DashboardListings extends Component {
 		this.state = { vehicles: [] }
 	}
 
-	componentWillMount() {
-		ajax({
+componentWillMount() {
+		this.getAllVehicles();
+}
+
+getAllVehicles(){
+	ajax({
 			url: 'https://adrians-fine-cars-server.herokuapp.com/vehicles/',
 			type: 'GET',
 			cache: false,
@@ -19,7 +23,7 @@ export default class DashboardListings extends Component {
 		}).then( response => {
 			this.setState( {vehicles: response} );
 		});
-	}
+};
 
 	deleteHandler(vehicle) {
 		ajax({
@@ -45,10 +49,7 @@ export default class DashboardListings extends Component {
 				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 			}
 		}).then( response => {
-			let { vehicles } = this.state;
-			console.log('response from PUT', response.sold);
-			this.setState( {vehicles: vehicles} )
-			window.location.reload();
+			this.getAllVehicles();
 		})
 	}
 
@@ -61,9 +62,7 @@ export default class DashboardListings extends Component {
 				Authorization: `Bearer ${Cookies.getJSON("user").user.access_token}`
 			}
 		}).then ( response => {
-			let { vehicles } = this.state;
-			this.setState( {featured: vehicles} )
-			window.location.reload();
+			this.getAllVehicles();
 		})
 	}
 
