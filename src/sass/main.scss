@@ -3,6 +3,13 @@
 @import 'dashboardlistings';
 @import 'createNewListing';
 @import 'heading';
+@import 'contact';
+@import 'home';
+@import 'featuredvehicles';
+
+body {
+	margin-top: 145px;
+}
 
 .sold-true { 
   background-color: red;

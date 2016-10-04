@@ -7,8 +7,10 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div className="home_wrapper">
-				<div className="hero_img">This is the HOME page</div>
-				<h1>Featured Vehicles This Month</h1>
+  				<div className="section-home" id="home">
+    				<h1 className="home-heading">Fine Vehicles for the Right People.</h1>
+  				</div>
+
 				<div className="featured_vehicles_wrapper">
 					<FeaturedVehicleListing/>
 				</div>

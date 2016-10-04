@@ -1,0 +1,55 @@
+.section-featuredvehicle {
+  display: block;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.fv-slider {
+  min-width: 100vw;
+  margin-top: 100px;
+}
+
+.fv-mask {
+  display: inline-block;
+  text-align: center;
+}
+
+.slide {
+  display: inline-block;
+  text-align: center;
+}
+
+.fv-heading {
+  position: static;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  margin-top: 0px;
+  padding-top: 100px;
+  font-family: Merriweather, serif;
+  text-align: center;
+}
+
+.slide-content-wrapper {
+  display: inline-block;
+  width: 800px;
+  height: 100%;
+  background-color: red;
+}
+
+.fv-heading-line {
+  border-bottom: 1px solid #000;
+}
