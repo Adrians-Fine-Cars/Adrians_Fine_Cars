@@ -10,10 +10,6 @@ export default class Home extends Component {
   				<div className="section-home" id="home">
     				<h1 className="home-heading">Fine Vehicles for the Right People.</h1>
   				</div>
-
-				<div className="featured_vehicles_wrapper">
-					<FeaturedVehicleListing/>
-				</div>
 			</div>
 		)
 	}

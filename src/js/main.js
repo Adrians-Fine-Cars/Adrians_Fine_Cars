@@ -11,6 +11,7 @@ import Login from './login';
 import Dashboard from './dashboard';
 import CreateNewListing from './createNewListing';
 import editListing from './editListing';
+import FeaturedVehicleListing from './FeaturedVehicleListing';
 
 
 
@@ -18,6 +19,7 @@ ReactDOM.render ((
 	<Router history={hashHistory}>
 		<Route path="/" component={Heading}>
 			<IndexRoute component={Home} />
+			<Route path="/featured_vehicle" component={FeaturedVehicleListing} />
 			<Route path="/inventory" component={Inventory} />
 			<Route path="/vehicle_overview/:vehicle_id" component={VehicleOverview} />
 			<Route path="/about" component={About} />

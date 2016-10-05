@@ -3,7 +3,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
+  min-height: 80vh;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -13,7 +13,7 @@
   -ms-flex-align: center;
   align-items: center;
   background-image: url('../images/AFC-Hero-Image.jpg');
-  background-position: 50% 50%;
+  background-position: 50% 85%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -21,8 +21,9 @@
 .home-heading {
   font-family: Merriweather, serif;
   color: #fff;
-  font-size: 58px;
+  font-size: 68px;
   text-shadow: 0 1px 6px #000;
+  padding-bottom: 195px;
 }
 
 // @media (max-width: 991px) {

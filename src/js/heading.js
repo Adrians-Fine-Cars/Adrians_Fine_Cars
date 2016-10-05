@@ -10,7 +10,7 @@ export default class Heading extends Component {
 					<div className="nav-container w-container">
 						<Link to="/"><div className="brand w-nav-brand"><img className="nav-logo-image" src="images/AFC_Logo.png"/></div></Link>
 						<nav className="nav-menu w-nav-menu" role="navigation">
-							<Link className="nav-link w-nav-link" to="/"> Featured Vehicles </Link>
+							<Link className="nav-link w-nav-link" to="/featured_vehicle"> Featured Vehicles </Link>
 							<Link className="nav-link w-nav-link" to="/inventory"> Inventory </Link>
 							<Link className="nav-link w-nav-link" to="/about"> About </Link>
 							<Link className="nav-link w-nav-link" to="/contact"> Contact </Link>
