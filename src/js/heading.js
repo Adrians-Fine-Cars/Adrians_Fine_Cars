@@ -22,11 +22,13 @@ export default class Heading extends Component {
 
 
 				{this.props.children}
-				<footer className="footer">
-					<div>Adrians Fine Cars 2016</div>
-					<Link to="/login"><button>AG</button></Link>
-				</footer>
+				  <div className="footer">
+				    <div className="footer-container w-container">
+				      <div className="copyright-text">© Adrian's Fine Car's copyright 2016&nbsp;</div><Link to="/login"><button className="ag-button w-button">AG</button></Link>
+				    </div>
+				  </div>
 			</div>
 		)
 	}
 }
+
